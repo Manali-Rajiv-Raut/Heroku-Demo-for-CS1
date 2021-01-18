@@ -22,15 +22,15 @@
 # In[4]:
 
 
-import sklearn.ensemble.forest
+#import sklearn.ensemble.forest
 
 
 # In[5]:
 
 
 import sklearn
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.feature_extraction.text import CountVectorizer
+#from sklearn.ensemble import RandomForestRegressor
+#from sklearn.feature_extraction.text import CountVectorizer
 
 
 # In[6]:
