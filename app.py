@@ -39,14 +39,14 @@ import joblib
 
 app = Flask(__name__)
 
-#eclf = joblib.load("saved_model/eclf_ML_Model_.pkl")
-model =joblib.load("saved_model/RF_regressor_model_.pkl")   
-vectorizer_sit = joblib.load('saved_model/vectorizer_sit.pkl')
+#eclf = joblib.load("eclf_ML_Model_.pkl")
+model =joblib.load("RF_regressor_model_.pkl")   
+vectorizer_sit = joblib.load('vectorizer_sit.pkl')
 
-with open('output_files/feature_dict', 'rb') as f:   
+with open('feature_dict', 'rb') as f:   
     feature_dict = pickle.load(f)
 
-with open('output_files/features', 'rb') as f:      
+with open('features', 'rb') as f:      
     new_features = pickle.load(f)
 
 
