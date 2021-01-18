@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[8]:
 
 
+#!pip install joblib
 
+
+# In[9]:
+
+
+#! pip install gunicorn
 
 
 # In[1]:
@@ -24,7 +30,7 @@ import pickle
 # In[3]:
 
 
-import sklearn.externals.joblib as extjoblib
+
 import joblib
 
 
@@ -36,11 +42,13 @@ app = Flask(__name__)
 #eclf = joblib.load("saved_model/eclf_ML_Model_.pkl")
 model =joblib.load("saved_model/RF_regressor_model_.pkl")   
 vectorizer_sit = joblib.load('saved_model/vectorizer_sit.pkl')
+
 with open('output_files/feature_dict', 'rb') as f:   
     feature_dict = pickle.load(f)
 
 with open('output_files/features', 'rb') as f:      
     new_features = pickle.load(f)
+
 
 # In[5]:
 
@@ -59,8 +67,6 @@ def predict():
     
     text = [x for x in request.form.values()]
     preprocessed_txt = vectorizer_sit.transform(text).toarray()
-    #pred_label = eclf.predict(preprocessed_txt)
-    
     new_vec = np.zeros((preprocessed_txt.shape[0],preprocessed_txt.shape[1]))
 
     for row in range(len(preprocessed_txt)):
@@ -72,11 +78,10 @@ def predict():
     
     y_predicted = model.predict(new_vec)
     
-    if y_predicted > 0.0:
-        return render_template('index.html',prediction_text= " The person tweeted this '{}' is Trustworthy".format(text))
+    if y_predicted != 0.0:
+        return render_template('index.html',prediction_text= " The person tweeted this {}  is Trustworthy".format(text))
     else:
-        return render_template('index.html',prediction_text= " The person tweeted ths '{}' is Not Trustworthy".format(text))
-    
+        return render_template('index.html',prediction_text= " The person tweeted this {}  is Not Trustworthy".format(text))
 
 
 # In[7]:
@@ -87,6 +92,10 @@ if __name__ == "__main__":
 
 
 # In[ ]:
+
+
+
+
 
 
 
