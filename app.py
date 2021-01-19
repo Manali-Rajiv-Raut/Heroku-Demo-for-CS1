@@ -10,7 +10,7 @@ import joblib
 import pickle
 import numpy as np
 #import pandas as pd
-import nltk
+#import nltk
 #from sklearn.ensemble import RandomForestRegressor
 from flask import Flask, request, jsonify, render_template
 
