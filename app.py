@@ -9,7 +9,7 @@ Created on Wed Jan 20 01:11:01 2021
 import joblib
 import pickle
 import numpy as np
-import pandas as pd
+#import pandas as pd
 import nltk
 #from sklearn.ensemble import RandomForestRegressor
 from flask import Flask, request, jsonify, render_template
