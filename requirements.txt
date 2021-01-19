@@ -7,4 +7,3 @@ Werkzeug==0.15
 numpy>=1.19.3
 joblib==1.0.0
 click>=5.1
-sklearn==0.22.2
