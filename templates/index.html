@@ -17,6 +17,7 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
+	 <label><b> Post your Tweet Here : </b></label>
     	<input type="text" name="Post Your Tweet" placeholder="text" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Trustworthiness</button>
