@@ -13,7 +13,9 @@ scipy ==1.6.0
 matplotlib ==3.3.3
 cycler>=0.10
 pyparsing>=2.0.3
-kiwisolver>1.0.1
+kiwisolver>=1.0.1
 python-dateutil>=2.1
-pillow>6.2.0
-threadpoolctl>2.0.0
+pillow>=6.2.0
+threadpoolctl>=2.0.0
+
+six ==1.15.0
